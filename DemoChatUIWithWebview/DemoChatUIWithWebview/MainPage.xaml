@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoChatUIWithWebview.MainPage"
+             xmlns:partials="clr-namespace:DemoChatUIWithWebview.Views.Partials">
+
+    <Grid RowSpacing="0" 
+           ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--   OUR CHAT VIEWS HERE   -->
+        <WebView Grid.Row="0" Margin="0" VerticalOptions="FillAndExpand" Source="https://www.google.com">
+            <WebView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </WebView.GestureRecognizers>
+        </WebView>
+        <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 BackgroundColor="LightGray"
+                 Grid.Row="1"/>
+        <partials:ChatInputBarView Grid.Row="2"
+                                   Margin="0,0,10,0"
+                                   x:Name="chatInput"/>
+    </Grid>
+
+</ContentPage>
