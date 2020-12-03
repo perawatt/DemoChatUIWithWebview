@@ -31,7 +31,7 @@
                  Grid.Column="0"
                  AutoSize="TextChanges"
                 Text="aa"/>
-        <Label Text="Send"
+        <!--<Label Text="Send"
                HorizontalOptions="FillAndExpand"
                BackgroundColor="Red"
                Grid.Row="0"
@@ -42,6 +42,12 @@
                 <TapGestureRecognizer
                       Tapped="TapGestureRecognizer_Tapped"/>
             </Label.GestureRecognizers>
-        </Label>
+        </Label>-->
+        <Button Text="Send"
+               HorizontalOptions="FillAndExpand"
+               BackgroundColor="Transparent"
+               Grid.Row="0"
+               Grid.Column="1"
+               Clicked="Button_Clicked"/>
     </Grid>
 </ContentView>
