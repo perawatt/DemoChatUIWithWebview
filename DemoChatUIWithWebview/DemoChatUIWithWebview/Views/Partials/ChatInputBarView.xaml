@@ -8,6 +8,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
@@ -20,6 +21,7 @@
                  Placeholder="Type your message here"
                  Grid.Row="0" 
                  Grid.Column="0"/>-->
+        <Image Grid.Row="0" Grid.Column="0" Margin="10,0,10,0" Source="sminfo.png" HeightRequest="25"/>
         <Editor x:Name="chatTextInput" 
                  Margin="1"  
                  TextColor="Black" 
@@ -28,9 +30,8 @@
                  PlaceholderColor="LightGray"
                  Placeholder="Type your message here"
                  Grid.Row="0" 
-                 Grid.Column="0"
-                 AutoSize="TextChanges"
-                Text="aa"/>
+                 Grid.Column="1"
+                 AutoSize="TextChanges"/>
         <!--<Label Text="Send"
                HorizontalOptions="FillAndExpand"
                BackgroundColor="Red"
@@ -47,7 +48,8 @@
                HorizontalOptions="FillAndExpand"
                BackgroundColor="Transparent"
                Grid.Row="0"
-               Grid.Column="1"
+               Grid.Column="2"
                Clicked="Button_Clicked"/>
+        <!--<ImageButton Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="25" Margin="10,0,10,0" Clicked="ImageButton_Clicked" Source="https://cdn.onlinewebfonts.com/svg/img_525366.png"/>-->
     </Grid>
 </ContentView>

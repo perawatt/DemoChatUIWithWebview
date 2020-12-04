@@ -29,7 +29,6 @@ namespace DemoChatUIWithWebview.Views.Partials
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            var text = chatTextInput.Text;
             chatTextInput.Text = string.Empty;
             chatTextInput.Focus();
         }
@@ -37,7 +36,13 @@ namespace DemoChatUIWithWebview.Views.Partials
         private void Button_Clicked(object sender, EventArgs e)
         {
             chatTextInput.Text = string.Empty;
-            //chatTextInput.Focus();
+            chatTextInput.Focus();
+        }
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            chatTextInput.Text = string.Empty;
+            chatTextInput.Focus();
         }
     }
 }
