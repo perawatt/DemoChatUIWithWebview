@@ -137,6 +137,12 @@
   <ItemGroup>
     <BundleResource Include="Resources\sminfo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addshortcut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\correctblue.png" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
       <UserProperties TriggeredFromHotReload="False" />

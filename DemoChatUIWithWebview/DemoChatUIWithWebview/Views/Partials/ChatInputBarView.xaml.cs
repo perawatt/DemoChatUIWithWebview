@@ -44,5 +44,26 @@ namespace DemoChatUIWithWebview.Views.Partials
             chatTextInput.Text = string.Empty;
             chatTextInput.Focus();
         }
+
+        private void chatTextInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var myText = sender as Editor;
+            if (string.IsNullOrEmpty(myText.Text))
+            {
+                sendButton.IsVisible = false;
+                voiceButton.IsVisible = true;
+            }
+            else
+            {
+                sendButton.IsVisible = true;
+                voiceButton.IsVisible = false;
+            }
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            chatTextInput.Text = string.Empty;
+            chatTextInput.Focus();
+        }
     }
 }

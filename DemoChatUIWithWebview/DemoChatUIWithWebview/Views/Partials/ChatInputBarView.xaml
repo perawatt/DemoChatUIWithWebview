@@ -2,7 +2,8 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DemoChatUIWithWebview.Views.Partials.ChatInputBarView">
-    <Grid RowSpacing="0" 
+    <Grid RowSpacing="0"
+          Padding="{OnPlatform Android='0,5,0,5', iOS='0,5,0,10'}"
            ColumnSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -21,8 +22,27 @@
                  Placeholder="Type your message here"
                  Grid.Row="0" 
                  Grid.Column="0"/>-->
-        <Image Grid.Row="0" Grid.Column="0" Margin="10,0,10,0" Source="sminfo.png" HeightRequest="25"/>
-        <Editor x:Name="chatTextInput" 
+        <Image Grid.Row="0" Grid.Column="0" Margin="10,0,10,0" Source="addshortcut.png" HeightRequest="25"/>
+        <Frame
+                   Grid.Row="0" 
+                   Grid.Column="1"
+                   Padding="10,0,10,0"
+                   CornerRadius="20"
+                   BorderColor="LightGray"
+                   HasShadow="False"
+                   IsClippedToBounds="true">
+
+            <Editor x:Name="chatTextInput" 
+                 Margin="1"  
+                 TextColor="Black" 
+                 Keyboard="Chat"  
+                 HorizontalOptions="FillAndExpand" 
+                 PlaceholderColor="LightGray"
+                 Placeholder="Type your message here"
+                 AutoSize="TextChanges"
+                 TextChanged="chatTextInput_TextChanged"/>
+        </Frame>
+        <!--<Editor x:Name="chatTextInput" 
                  Margin="1"  
                  TextColor="Black" 
                  Keyboard="Chat"  
@@ -31,7 +51,7 @@
                  Placeholder="Type your message here"
                  Grid.Row="0" 
                  Grid.Column="1"
-                 AutoSize="TextChanges"/>
+                 AutoSize="TextChanges"/>-->
         <!--<Label Text="Send"
                HorizontalOptions="FillAndExpand"
                BackgroundColor="Red"
@@ -44,12 +64,25 @@
                       Tapped="TapGestureRecognizer_Tapped"/>
             </Label.GestureRecognizers>
         </Label>-->
-        <Button Text="Send"
+        <!--<Button Text="Send"
                HorizontalOptions="FillAndExpand"
                BackgroundColor="Transparent"
                Grid.Row="0"
                Grid.Column="2"
-               Clicked="Button_Clicked"/>
-        <!--<ImageButton Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" HeightRequest="25" Margin="10,0,10,0" Clicked="ImageButton_Clicked" Source="https://cdn.onlinewebfonts.com/svg/img_525366.png"/>-->
+               Clicked="Button_Clicked"/>-->
+        <StackLayout x:Name="voiceButton" Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="Transparent" IsVisible="true">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image BackgroundColor="Transparent" HeightRequest="25" Margin="10,0,10,0" Source="sminfo.png"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="sendButton" Grid.Row="0" Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="Fill" BackgroundColor="red" IsVisible="false">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                      Tapped="TapGestureRecognizer_Tapped_1"/>
+            </StackLayout.GestureRecognizers>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Image BackgroundColor="Transparent" HeightRequest="25" Margin="10,0,10,0" Source="correctblue.png"/>
+            </StackLayout>
+        </StackLayout>
     </Grid>
 </ContentView>
